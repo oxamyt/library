@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="form">
+                <form>
+                    <legend>
+                        <div class="main-form">
+                        <label for="title">What`s the title?</label>
+                        <input type="text" id="title" name="title">
+                        <label for="author">Who`s the author?</label>
+                        <input type="text" id="author" name="author">
+                        <p>Have you read it?</p>
+                        <label for="status-yes">
+                            <input type="radio" id="status-yes" name="status" value="yes"> <span>Yes</span><br>  
+                        </label>
+                        <label for="status-no">
+                            <input type="radio" id="status-no" name="status" value="no"> <span>No</span><br>  
+                        </label>
+                        <button method="get" id="add">Add book</button>
+                        </div>
+                    </legend>
+                </form>
+            </div>
+        </div>
+        <div class="header">
+            <h1>Library</h1>
+        </div>
+        <div class="book-section"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,15 +1,16 @@
 const myLibrary = [];
 
-function Book(title, author, pages, status) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.status = status;
+class Book {
+  constructor(title, author, pages, status) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.status = status;
+  }
+  readStatus() {
+    this.status = !this.status;
+  }
 }
-
-Book.prototype.readStatus = function () {
-  this.status = !this.status;
-};
 
 function readChange(index) {
   myLibrary[index].readStatus();

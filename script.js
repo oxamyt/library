@@ -28,6 +28,30 @@ function addBookToLibrary(event) {
   displayBook();
 }
 
+function formValidation(event) {
+  const title = document.querySelector("#title");
+  const author = document.querySelector("#author");
+  const pages = document.querySelector("#pages");
+  title.addEventListener("input", (event) => {
+    title.setCustomValidity("");
+  });
+  author.addEventListener("input", (event) => {
+    author.setCustomValidity("");
+  });
+  pages.addEventListener("input", (event) => {
+    pages.setCustomValidity("");
+  });
+  if (title.validity.valueMissing) {
+    title.setCustomValidity("You need to enter proper title name");
+  } else if (author.validity.valueMissing) {
+    author.setCustomValidity("You need to enter proper author name");
+  } else if (pages.validity.valueMissing) {
+    pages.setCustomValidity("You need to enter proper pages number");
+  } else {
+    addBookToLibrary(event);
+  }
+}
+
 function displayBook() {
   const library = document.querySelector(".library");
   library.innerHTML = "";
@@ -65,4 +89,6 @@ addBtn.addEventListener("click", function () {
 });
 
 const btnAdd = document.querySelector(".add");
-btnAdd.addEventListener("click", addBookToLibrary);
+btnAdd.addEventListener("click", function (event) {
+  formValidation(event);
+});
